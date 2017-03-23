@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nijin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="screen">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body>
+<!--Step0-->
+<div class="Step0">
+	<div class="container">
+	<section id="signin">	
+		<form>
+			<h1><i class="fa fa-star" aria-hidden="true" style="font-size: 2em"></i></h1>
+			<h1>It is always nice starting something new</h1>
+			<p>¿Cómo se llamará vuestro proyecto?. Por Ejemplo: <span class="inputName">Valentines Card Project</span></p>
+			<input type="text" id="projectName" onclick="" placeholder="Nombre del Proyecto" value="">
+			<!--Error<danger>: El nombre para vuestro proyecto es muy importante! -->
+			<hr>
+			<h3>Escribe el nombre clave de tu team,</h3>
+			<p>For Example, My New <span class="inputName">ValentinesCard</span></p>
+			<input type="text" id="teamName" onclick="" placeholder="My New..." value="">
+			<!--Error<danger>: El nombre no puede contener espacios. Vease el ejemplo ValentinesCard-->
+			<hr>
+			<h3> crea una contraseña, </h3>
+			<p>Save it <span class="inputName">F0R3V3R</span></p>
+			<input type="password" id="teamPassword" onclick="" placeholder="Password" value="">
+			<!--Error<danger>: El nombre no puede contener espacios. Vease el ejemplo F0R3V3R-->
+			<hr>			
+			<h1>añade los emails del equipo y comparte el inicio de algo nuevo.</h1>
+			<p>Check yours <span class="inputName">@email</span></p>
+			<input type="text" id="userEmail" onclick="" placeholder="Your Email" value="">
+			<input type="email" id="userEmail" onclick="" placeholder="Mate Email" value="">
+			<!--Error<danger>: El email es incorrecto-->
+		</form>
+		<a href="#briefQuest"><input type="button" value="Guardar" class="btn btn-success" onclick="stepOne()"></a>
+		<!--If todo OK -> Añadir a base de datos + Confirmar en correo con enlace a Step1-->
+	</section>
+	</div>
+</div>
+
+<a name="briefQuest"></a>
+<!--Step1-->
+<div class="Step1">
+	<div class="welcome">
+		<h3>Welcome to <a href="#"><span id="projectName">"Nombre del Proyecto"</span></a> creative process.</h3>
+	</div>
+	
+	<div class="container">
+		<section id="briefQuest">
+		<h1><i class="fa fa-lightbulb-o" aria-hidden="true" style="font-size: 2em"></i></h1>
+		<h1>Briefing</h1>
+		<h2>Shine on you, crazy lightbulb</h2>
+		<div class="questions">
+			<div id="questItem">
+				<div class="basic">What?</div>
+				<h3>Let's talk about the project</h3>
+				<div class="chooseType">
+					<p>Is it about a product or a service?</p>
+						<form>
+						  <label>
+						    <input type="radio" name="optionsWhat" id="optionsWhat1" value="option1" checked>
+						   Product
+						  </label>
+						  <label>
+						    <input type="radio" name="optionsWhat" id="optionsWhat2" value="option2" checked>
+						   Service
+						  </label>
+					  	</form>
+					<!--Error<danger>: Por favor, seleccione entre una de las opciones-->  		
+				</div>
+				
+				<p>Lo primero que hay que exponer es el proyecto en su forma más básica, explicado con pocas palabras, como por ejemplo: <span class="cursive">"Vamos a realizar una ilustración para el día de San Valentín"</span></p>
+				<textarea id="contenidoWhat" placeholder="" class="form-control" onkeyup="">Acerca del proyecto...</textarea>	
+			</div>
+			<div id="questItem">
+				<div class="basic">Who?</div>
+				<h3>Know your target</h3>
+				<div class="chooseType">
+					<p>Hacia qué grupo de edad nos dirigimos?</p>
+						<form>
+							  <label>
+							    <input type="radio" name="optionsAge" id="optionsAge1" value="option1" checked>
+							   Infantil [0-12years]
+							  </label>
+							  <label>
+							    <input type="radio" name="optionsAge" id="optionsAge2" value="option2" checked>
+							   Joven [12-18years]
+							  </label>
+							  <label>
+							    <input type="radio" name="optionsAge" id="optionsAge3" value="option3" checked>
+							   Joven Adulto [18-30years]
+							  </label>
+							  <label>
+							    <input type="radio" name="optionsAge" id="optionsAge4" value="option4" checked>
+							   Adulto [30-57years]
+							  </label>
+							  <label>
+							    <input type="radio" name="optionsAge" id="optionsAge5" value="option5" checked>
+							   Adulto Mayor [57-∞years]
+							  </label>
+							  <label>
+							    <input type="radio" name="optionsAge" id="optionsAge6" value="option6" checked>
+							   None
+							  </label>
+						 </form>
+					<!--Error<danger>: Por favor, seleccione una o varias opciones-->	
+				</div>
+				
+				<p>Algún comentario?<span class="cursive"></span></p>
+				<textarea id="contenidoAge" placeholder="" class="form-control" onkeyup="">Estilo de vida saludable. Con bajo nivel adquisitivo...</textarea>	
+			</div>
+			<div id="questItem">
+				<div class="basic">Where?</div>
+				<h3>Define the Media</h3>
+				<div class="chooseType">
+					<p>Is it for screen, printing or both?</p>
+						<form>
+						  <label>
+						    <input type="radio" name="optionsMedia" id="optionsMedia1" value="option1" checked>
+						   Screen
+						  </label>
+						  <label>
+						    <input type="radio" name="optionsMedia" id="optionsMedia2" value="option2" checked>
+						   Print
+						  </label>
+					  	</form>
+					<!--Error<danger>: Por favor, seleccione entre una de las opciones-->  		
+				</div>
+				
+				<p>No está nada mal si conocemos el terreno por donde vamos a pasar<span class="cursive"></span></p>
+				<textarea id="contenidoMedia" placeholder="" class="form-control" onkeyup="">Medidas de pantalla en pixeles, A3 a doble cara en vertical...</textarea>	
+			</div>			
+		</div>
+		<a href="#briefBrainstorm"><input type="button" value="Guardar" class="btn btn-success" onclick="stepTwo()"></a>
+		<!--If todo OK -> Añadir a base de datos + Abrir enlace a Step2-->
+	</section>
+	</div>
+</div>
+
+<a name="briefBrainstorm"></a>
+
+<!--Step1 OK-->
+<div class="Step1">
+	<div class="welcome">
+		<h3>Welcome to <a href="#"><span id="projectName">"Nombre del Proyecto"</span></a> creative process.</h3>
+	</div>
+	<div class="container">
+		<section id="briefQuest">
+		<h1><i class="fa fa-lightbulb-o" aria-hidden="true" style="font-size: 2em"></i></h1>
+		<h1>Briefing</h1>
+		<h2>Shine on you, crazy lightbulb</h2>
+		<div class="questions">
+			<div id="questItem">
+				<div class="basic">What?</div>
+				<h3>Let's talk about the project</h3>
+				<div class="chooseType2">
+					<p>Is it about a product or a service?</p>
+						<form>
+						  <label>
+						   <h4 id="optionsWhat1" value="option1">Product</h4>
+						  </label>
+					  	</form>		
+				</div>
+				
+				<p id="contenidoWhat"><span class="coments">Lo primero que hay que exponer es el proyecto en su forma más básica, explicado con pocas palabras, como por ejemplo: "Vamos a realizar una ilustración para el día de San Valentín"</span></p>
+			</div>
+			<div id="questItem">
+				<div class="basic">Who?</div>
+				<h3>Know your target</h3>
+				<div class="chooseType2">
+					<p>Hacia qué grupo de edad nos dirigimos?</p>
+					<form>
+						  <label>
+						   <h4 id="optionsAge1" value="option1">Infantil [0-12years]</h4>
+						  </label>
+						  <label>
+						    <h4 id="optionsAge2" value="option2">Joven [12-18years]</h4>
+						  </label>
+					  	</form>
+				</div>
+				
+				<p id="contenidoAge"><span class="coments">Comentarios añadidos en WHOOOO ARE YOU UH UH</span></p>
+			</div>
+			<div id="questItem">
+				<div class="basic">Where?</div>
+				<h3>Define the Media</h3>
+				<div class="chooseType2">
+					<p>Is it for screen, printing or both?</p>
+
+						  <label>
+						    <h4 id="optionsMedia1" value="option1">Screen</h4>
+						  </label>
+						  <label>
+						    <h4 id="optionsMedia1" value="option1">Print</h4>
+						  </label>
+
+				</div>
+				
+				<p id="contenidoMedia"><span class="coments">No está nada mal si conocemos el terreno por donde vamos a pasar. Medidas de pantalla en pixeles, A3 a doble cara en vertical...</span></p>	
+			</div>			
+		</div>
+	</section>
+	</div>
+</div>
+
+<!--Step2-->
+<div class="Step2">
+	<div class="container">
+		<section id="brainstorm">
+		<h1><i class="fa fa-cloud" aria-hidden="true" style="font-size: 2em"></i></h1>
+		<h1>Brainstorm</h1>
+		<h2>It's raining ideas!</h2>
+		<div class="row">
+		  <div class="col-lg-12">
+		    <div class="input-group">
+		      <input type="text" class="form-control" placeholder="Nuevo concepto">
+		      <span class="input-group-btn">
+		        <a href="#stepThree"><button class="btn btn-success" type="button">Add</button></a>
+		      </span>
+		      <!--Error<danger>: Añadir conceptos individualmente-->
+		    </div>
+		  </div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1">Arbol</div>
+			<div class="col-sm-1">Jugar</div>
+			<div class="col-sm-1">Amor</div>
+			<div class="col-sm-1">Montaña</div>
+			<div class="col-sm-1">Montaña</div>
+			<div class="col-sm-1">Arbol</div>
+			<div class="col-sm-1">Jugar</div>
+			<div class="col-sm-1">Amor</div>
+			<div class="col-sm-1">Montaña</div>
+			<div class="col-sm-1">Montaña</div>
+			<div class="col-sm-1">Montaña</div>
+			<div class="col-sm-1">Montaña</div>
+			<div class="col-sm-1">Arbol</div>
+			<div class="col-sm-1">Jugar</div>
+			<div class="col-sm-1">Amor</div>
+			<div class="col-sm-1">Montaña</div>
+		</div>
+		
+		</section>
+	</div>
+</div>
+<!--Step3-->
+<div class="Step3">
+	<div class="container">
+		<section id="colors">
+		<h1><i class="fa fa-paint-brush" aria-hidden="true" style="font-size: 2em"></i></h1>
+		<h1>Colores</h1>
+		<h2>Let's find some nice colors (Or only reference colors)</h2>
+		<h4>Choose colors</h4>
+		<form>	
+			<div class="oneColor">
+				<input type="color" id="colorNuevo1" class="form-control">
+				<input type="text" id="colorTextNuevo1" class="form-control" placeholder="Nombre">
+			</div>
+			<div class="oneColor">
+				<input type="color" id="colorNuevo1" class="form-control">
+				<input type="text" id="colorTextNuevo1" class="form-control" placeholder="Nombre">
+			</div>
+			<div class="oneColor">
+				<input type="color" id="colorNuevo1" class="form-control">
+				<input type="text" id="colorTextNuevo1" class="form-control" placeholder="Nombre">
+			</div>
+		</form>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #BDB76B"></div>
+				<div class="colorText">
+					<p>DARKK HARI</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #FFFF00"></div>
+				<div class="colorText">
+					<p>YELLOW</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #FF6347"></div>
+				<div class="colorText">
+					<p>TOMATO</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #98FB98"></div>
+				<div class="colorText">
+					<p>PALEGREEN</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #ADFF2F"></div>
+				<div class="colorText">
+					<p>DARKK HARI</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #66CDAA"></div>
+				<div class="colorText">
+					<p>YELLOW</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #191970"></div>
+				<div class="colorText">
+					<p>TOMATO</p>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="color" style="background-color: #F0FFF0"></div>
+				<div class="colorText">
+					<p>HPNEYDEW</p>
+				</div>
+			</div>			
+		</div>
+		<a href="#briefQuest"><input type="button" value="Guardar" class="btn btn-success" onclick="stepFour()"></a>
+		<!--If todo OK -> Añadir a base de datos + Confirmar en correo con enlace a Step1-->
+		</section>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!---
+	<section id="editor" class="container">
+		<form>
+			<h4>Editar plantilla</h4>
+			<input type="text" name="" id="titulo" placeholder="Escribe tu titulo" class="form-control" onkeyup="guardar()" value="Escribe tu título">
+			<textarea id="contenido" placeholder="Escribe tu texto" class="form-control" onkeyup="guardar()">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum accusamus amet ut atque fugit quisquam tempore animi tenetur consectetur, at natus aspernatur delectus quis vel officiis et sint voluptatum, assumenda eius porro dolorum nostrum eum, perferendis ipsa! Vitae voluptas, delectus. Aliquam quas aliquid magnam corrupti in totam impedit laboriosam provident!
+			</textarea>
+			<input type="text" id="imagen" placeholder="URL imagen" value="#000">
+			<input type="color" id="colorTexto" class="form-control">
+			<a href="index.html"><input type="button" value="INICIO" class="btn btn-primary" onclick=""></a>
+		</form>
+	</section>
+-->
+<section id="editor" class="container" ><a href="index.html"><input type="button" value="N I J I N" class="btn btn-warning" onclick=""></a>
+	<script src="js/main.js"></script>
+</body>
+</html>
